@@ -1,9 +1,15 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import React from "react";
+import { render, screen } from "@testing-library/react";
+import App from "./App";
 
-test('renders learn react link', () => {
+describe("renders learn react link", () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const linkElement = screen.getByText(/Hello World/i);
+  const buttonElement = screen.getByRole("button");
+  it("it will be rendered content", () => {
+    expect(linkElement).toBeInTheDocument();
+  });
+  it("button Will have text Hello World", () => {
+    expect(buttonElement).toHaveTextContent("Hello World");
+  });
 });
