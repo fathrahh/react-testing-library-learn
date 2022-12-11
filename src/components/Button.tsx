@@ -1,4 +1,4 @@
-import { uuid } from "uuidv4";
+import { v4 as uuidv4 } from "uuid";
 import React, { ButtonHTMLAttributes } from "react";
 
 export default function Button({
@@ -12,7 +12,7 @@ export default function Button({
   "onClick"
 >) {
   const handleClick = () => {
-    const id = uuid();
+    const id = uuidv4();
     console.log(id);
   };
 

@@ -1,15 +1,19 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import App from "./App";
+import "@testing-library/jest-dom";
+import App from "../App";
+import { BrowserRouter } from "react-router-dom";
 
 describe("renders learn react link", () => {
-  render(<App />);
+  render(<App />, { wrapper: BrowserRouter });
+
   const linkElement = screen.getByText(/Hello World/i);
   const buttonElement = screen.getByRole("button");
-  it("it will be rendered content", () => {
+
+  it("will be rendered content", () => {
     expect(linkElement).toBeInTheDocument();
   });
   it("button Will have text Hello World", () => {
-    expect(buttonElement).toHaveTextContent("Hello World");
+    expect(buttonElement).toHaveTextContent("About");
   });
 });
