@@ -8,7 +8,7 @@ const axiosInstance = axios.create({
 
 axiosInstance.interceptors.request.use(
   async (config) => {
-    // Do something for example Refresh Token
+    //8 Do something for example Refresh Token
     // const refreshToken = localStorage.getItem("refreshToken");
     // const response = await axiosInstance.post("refreshToken", { refreshToken });
     // config.headers?.accessToken = response.data.accessToken as string;

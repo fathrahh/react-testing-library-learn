@@ -1,5 +1,6 @@
 import * as React from "react";
 import { useRoutes } from "react-router-dom";
+import MainLayout from "../layouts/MainLayout";
 
 const Loading = () => <div>Loading</div>;
 
@@ -15,6 +16,7 @@ export default function Router() {
   return useRoutes([
     {
       path: "/",
+      element: <MainLayout />,
       children: [
         {
           path: "",
